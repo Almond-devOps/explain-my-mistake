@@ -54,7 +54,10 @@ Given a question and the student's answer, decide whether the answer is correct,
     if (!response.ok) {
       const errText = await response.text();
       console.error('Anthropic API error:', errText);
-      return res.status(502).json({ error: 'The AI service returned an error.' });
+      // TEMPORARY: surfacing the raw error to the client for debugging.
+      // Remove this line (and go back to a generic message) once things work —
+      // don't leave provider error details exposed to end users permanently.
+      return res.status(502).json({ error: 'The AI service returned an error.', debug: errText });
     }
 
     const data = await response.json();
