@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF3E7">
+<title>Explain My Mistake — see exactly where it went wrong</title>
+<meta name="description" content="Paste a question and the answer you gave. Get it marked up like a teacher would — the mistake circled, and the reasoning that gets it right.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14.5' fill='%23FAF3E7' stroke='%23C1392B' stroke-width='2'/%3E%3Cpath d='M9.5 16.5 L14 21 L23 10.5' fill='none' stroke='%23C1392B' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#top" aria-label="Explain My Mistake, back to top">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M9.5 16.5 L14 21 L23 10.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Explain My Mistake</span>
+    </a>
+    <nav class="nav" id="nav" aria-label="Primary">
+      <a href="#tool">Try it</a>
+      <a href="#how">How it works</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" id="tool">
+    <div class="hero-copy">
+      <p class="eyebrow">Grade yourself</p>
+      <h1 class="reveal">
+        Wrong answer?<br>
+        <span class="underline-wrap">Let's find out why
+          <svg class="underline-svg" viewBox="0 0 320 18" preserveAspectRatio="none" aria-hidden="true">
+            <path class="underline-path" d="M3 12 C 60 4, 120 16, 180 8 S 280 4, 316 10" fill="none" stroke="#C1392B" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </span>
+      </h1>
+      <p class="hero-sub reveal">Paste the question and the answer you gave. We'll mark it up the way a good teacher would — circle the slip, and explain the reasoning that gets you to the right one.</p>
+      <div class="hero-meta reveal"><span class="dot"></span> Graded live by Claude — nothing is stored.</div>
+    </div>
+
+    <div class="tool-card reveal" aria-labelledby="tool-heading">
+      <div class="tool-tape" aria-hidden="true"></div>
+      <h2 id="tool-heading" class="sr-only">Submit your question and answer</h2>
+
+      <div class="field">
+        <label for="q">Question</label>
+        <textarea id="q" placeholder="e.g. Solve for x: 2x + 4 = 12" rows="3" maxlength="1200"></textarea>
+      </div>
+
+      <div class="field">
+        <div class="field-head">
+          <label for="a">Your answer</label>
+        </div>
+        <input id="a" type="text" placeholder="e.g. x = 8" maxlength="400">
+      </div>
+
+      <button id="go" type="button">
+        <svg class="pen-icon" viewBox="0 0 20 20" aria-hidden="true">
+          <path d="M13.5 2.5 L17.5 6.5 L7 17 L2.5 17.5 L3 13 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+        </svg>
+        <span id="goLabel">Explain my mistake</span>
+      </button>
+      <p class="hint">or press <kbd>⌘</kbd>/<kbd>Ctrl</kbd> + <kbd>Enter</kbd></p>
+
+      <div id="out" class="out" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <p class="eyebrow center">How it works</p>
+    <h2 class="section-title center reveal">Three steps to the fix</h2>
+    <ol class="steps">
+      <li class="reveal">
+        <span class="num">01</span>
+        <h3>Paste it in</h3>
+        <p>Drop in the question exactly as it was asked, and the answer you actually gave — no need to tidy it up.</p>
+      </li>
+      <li class="reveal">
+        <span class="num">02</span>
+        <h3>Get graded</h3>
+        <p>It's read back the way a teacher reads a test: what you were reaching for, and the exact step where it slipped.</p>
+      </li>
+      <li class="reveal">
+        <span class="num">03</span>
+        <h3>Learn the fix</h3>
+        <p>Walk away with the corrected reasoning and a way to remember it — not just the right answer.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title">Being wrong is data</h2>
+        <p>Most tools stop at "correct" or "incorrect." That's the least useful part of a mistake. The interesting part is <em>why</em> a wrong answer felt right in the moment — that's usually where the actual misconception is hiding.</p>
+        <p>Explain My Mistake is a small, single-page tool built around that idea: paste what you were asked and what you answered, and get a plain-language breakdown of the gap between them.</p>
+      </div>
+      <aside class="about-note reveal" aria-hidden="false">
+        <p class="hand">the goal was never the right answer — it's knowing why the wrong one felt right.</p>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <a class="logo small" href="#top" aria-label="Back to top">
+      <svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="14.5" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M9.5 16.5 L14 21 L23 10.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Explain My Mistake</span>
+    </a>
+    <p>Turning wrong answers into understanding, one mistake at a time.</p>
+    <small>&copy; 2026 Explain My Mistake</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
