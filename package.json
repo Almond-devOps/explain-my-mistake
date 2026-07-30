@@ -1,6 +1,0 @@
-{
-  "name": "explain-my-mistake",
-  "version": "1.0.0",
-  "private": true,
-  "description": "A one-page tool that grades a question/answer pair using the Claude API and explains the mistake."
-}
