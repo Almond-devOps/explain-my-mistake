@@ -20,13 +20,14 @@ export default async function handler(req, res) {
   }
 
   const systemPrompt = `You are grading a student's answer for a study tool called "Explain My Mistake".
-Given a question and the student's answer, respond ONLY with a JSON object (no markdown fences, no preamble) with exactly these fields:
+Given a question and the student's answer, decide whether the answer is correct, then respond ONLY with a JSON object (no markdown fences, no preamble) with exactly these fields:
 {
-  "gradeNote": "one short encouraging line, e.g. 'Close — here's where it slipped.' or 'Nice work — small refinement below.'",
-  "misconception": "1-2 sentences naming the likely misconception or error pattern, or 'No significant error found.' if the answer is correct",
-  "fix": "2-4 sentences explaining the correct reasoning/steps tailored to this exact question and answer",
-  "memoryTip": "1 short sentence, a general study/memory technique relevant to this mistake",
-  "nextStep": "1 short sentence suggesting a concrete next action"
+  "correct": true or false,
+  "gradeNote": "one short reaction line, e.g. 'Close — here's where it slipped.' or 'Nailed it.'",
+  "misconception": "if incorrect, 1-2 sentences naming the likely misconception or error pattern; if correct, 1-2 sentences on the key idea they applied correctly",
+  "fix": "if incorrect, 2-4 sentences explaining the correct reasoning/steps tailored to this exact question and answer; if correct, a precise restatement of why the reasoning holds",
+  "memoryTip": "1 short sentence, a concrete way to remember this",
+  "nextStep": "1 short sentence suggesting a concrete next action or follow-up exercise"
 }`;
 
   try {
