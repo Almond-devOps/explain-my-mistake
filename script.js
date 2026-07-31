@@ -193,11 +193,11 @@ function renderResult(question, answer){
 
   if(analysis.kind === 'arithmetic'){
     stepsHTML = `<code>${escapeHTML(analysis.expression)}</code> evaluates to <strong>${fmt(correctValue)}</strong>, following the standard order of operations (parentheses, then powers, then multiplication/division left to right, then addition/subtraction left to right).`;
-    memoryTip = 'Work multi-step arithmetic left to right in passes — all the multiplication/division first, then all the addition/subtraction — rather than strictly left to right across different operations.';
+    memoryTip = 'Work multi-step arithmetic left to right in passes all the multiplication/division first, then all the addition/subtraction rather than strictly left to right across different operations.';
   } else if(analysis.kind === 'linear'){
     const coefStr = analysis.coef === 1 ? '' : (analysis.coef === -1 ? '-' : fmt(analysis.coef));
     stepsHTML = `Starting from <code>${coefStr}x ${analysis.add >= 0 ? '+' : '-'} ${fmt(Math.abs(analysis.add))} = ${fmt(analysis.rhs)}</code>: subtract ${fmt(analysis.add)} from both sides to get <code>${coefStr || '1'}x = ${fmt(analysis.rhs - analysis.add)}</code>, then divide both sides by ${fmt(analysis.coef)} to get <code>x = ${fmt(correctValue)}</code>.`;
-    memoryTip = 'Undo operations in reverse order — addition/subtraction first, multiplication/division last — to isolate x cleanly.';
+    memoryTip = 'Undo operations in reverse order — addition/subtraction first, multiplication/division last to isolate x cleanly.';
   } else if(analysis.kind === 'percentage'){
     stepsHTML = `${fmt(analysis.pct)}% of ${fmt(analysis.base)} means <code>${fmt(analysis.pct)} / 100 &times; ${fmt(analysis.base)}</code>, which is <strong>${fmt(correctValue)}</strong>.`;
     memoryTip = 'Convert the percentage to a decimal first (divide by 100), then multiply — keeps the two steps from getting tangled.';
